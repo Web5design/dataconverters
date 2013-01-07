@@ -1,5 +1,4 @@
 from dataconverters import kml
-from geojson import dumps
 
 class TestKMLfile:
 
