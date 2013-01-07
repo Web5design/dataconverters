@@ -6,13 +6,13 @@ def parse(stream, **kwargs):
     k.from_string(kmlstring)
 
     def iterate(k):
-        foo = []
+        itemlist = []
         for item in k:
             if isinstance(item, kml.Document) or isinstance(item, kml.Folder):
-                foo.append({item: iterate(item.features())})
+                itemlist.append({item: iterate(item.features())})
             else:
-                foo.append(item)
-        return foo
+                itemlist.append(item)
+        return itemlist
 
     return iterate(k.features()), {}
 
