@@ -1,5 +1,5 @@
 import fiona
+import tempfile
 
-
-def parse(path, **kwargs):
+def parse(path):
     return fiona.collection(path), {}
